@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DoggaLogg.View.AddNewProfilePage">
+    <ContentPage.Content>
+        <StackLayout Padding="10" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Label Text="Namn" Grid.Column="0" Grid.Row="0" HorizontalOptions="Start" VerticalOptions="Center"/>
+                <Entry Text="{Binding ProfileName}" Grid.Column="1" Grid.Row="0" />
+                <Label Text="Ras" Grid.Column="0" Grid.Row="1" HorizontalOptions="Start" VerticalOptions="Center"/>
+                <Entry Text="{Binding ProfileRace}" Grid.Column="1" Grid.Row="1" />
+                <Label Text="BirthDate" Grid.Column="0" Grid.Row="2" />
+                <DatePicker Date="{Binding BDay}"  Grid.Column="1" Grid.Row="2">
+                    <DatePicker.Format>yyyy-MM-dd</DatePicker.Format>
+                </DatePicker>
+
+                <Label Text="Profil bild" Grid.Column="0" Grid.Row="3" />
+                
+            </Grid>
+            <Button Text="Save" Clicked="Save_Clicked" HorizontalOptions="FillAndExpand" />
+            <Button Text="Cancel" Clicked="Cancel_Clicked" HorizontalOptions="FillAndExpand"/>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

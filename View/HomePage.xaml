@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DoggaLogg.View.HomePage">
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="ProfileList"  
+                      ItemSelected="ProfileList_ItemSelected" 
+                      HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell >
+                            <StackLayout Orientation="Horizontal" Padding="10,0,20,0" >
+                                <Image  Source="icon.png" Aspect="Fill" />
+                                <Label Text="{Binding ProfileName}" FontSize="Large" Margin="10,0,0,0" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

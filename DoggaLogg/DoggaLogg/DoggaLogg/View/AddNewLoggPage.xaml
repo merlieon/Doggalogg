@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DoggaLogg.View.AddNewLoggPage">
+    <ContentPage.Content>
+        <StackLayout>
+                <Label Text="{Binding Id}" />
+
+                <Label Text="Title" FontSize="Large"  />
+                <Entry x:Name="TitleEntry" Text="{Binding LoggTitle}"  />
+                <Label Text="Text" FontSize="Large" />
+                <Editor x:Name="TextEditor"  HeightRequest="200" Text="{Binding LoggText}"  />
+
+            <Button Clicked="Save_Clicked" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

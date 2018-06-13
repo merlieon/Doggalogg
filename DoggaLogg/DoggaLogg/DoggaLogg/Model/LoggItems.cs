@@ -21,6 +21,7 @@ namespace DoggaLogg.Model
         public DateTime LoggTimesetStart { get; set; }
         public DateTime LoggTimesetEnd { get; set; }
 
+        //I Leave this property just like you have it before
         [ForeignKey(typeof(ProfileItems))]
         public int ProfileId { get; set; }
     }

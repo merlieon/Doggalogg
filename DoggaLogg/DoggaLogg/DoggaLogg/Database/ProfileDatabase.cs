@@ -34,6 +34,8 @@ namespace DoggaLogg.Database
             return database.Table<ProfileItems>().Where(i => i.Id == id).FirstOrDefaultAsync();
         }
 
+        //This is the new method with joins
+        //It's very simple you can see
         public async Task<List<ProfileItems>> GetProfileInclude()
         {
             var profiles = await GetProfileAsync();

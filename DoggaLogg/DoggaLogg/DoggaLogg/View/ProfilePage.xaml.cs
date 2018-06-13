@@ -25,13 +25,15 @@ namespace DoggaLogg.View
         protected async override void OnAppearing()
         {
             base.OnAppearing();
-
-            LoggList.ItemsSource = await App.Database.GetLoggAsync();
+            ProfileItems profile = (ProfileItems)BindingContext;
+            var loggs = await App.Database.GetLoggAsync();
+            LoggList.ItemsSource = loggs.Where(x =>x.ProfileId == profile.Id);
         }
 
         async void Button_Clicked(object sender, EventArgs e)
         {
-           await Navigation.PushAsync(new AddNewLoggPage() { BindingContext = new LoggItems() });
+            ProfileItems profile = (ProfileItems)BindingContext;
+            await Navigation.PushAsync(new AddNewLoggPage() { BindingContext = new LoggItems() { ProfileId = profile.Id } });
         }
 
         async void LoggList_ItemSelected(object sender, SelectedItemChangedEventArgs e)

@@ -5,6 +5,8 @@ using SQLite;
 using DoggaLogg.Model;
 using System.Threading.Tasks;
 using SQLiteNetExtensions.Attributes;
+using System.Linq;
+
 namespace DoggaLogg.Database
 {
 
@@ -34,7 +36,20 @@ namespace DoggaLogg.Database
 
         public async Task<List<ProfileItems>> GetProfileInclude()
         {
-            return await database.Table<ProfileItems>().Include("Loggs").ToListAsync();
+            var profiles = await GetProfileAsync();
+            var loggs = await GetLoggAsync();
+            var query = from p in profiles
+                        join l in loggs on p.Id equals l.ProfileId into list
+                        select new ProfileItems
+                        {
+                            Id = p.Id,
+                            ProfileIcon = p.ProfileIcon,
+                            ProfileName = p.ProfileName,
+                            ProfileRace = p.ProfileRace,
+                            BDay = p.BDay,
+                            Loggs = list
+                        };
+            return query.ToList();
         }
 
         public Task<int> SaveProfileAsync(ProfileItems profileItems)

@@ -18,10 +18,6 @@ namespace DoggaLogg.Model
         public DateTime BDay { get; set; }
 
         [OneToMany(CascadeOperations = CascadeOperation.All)]
-        public virtual List<LoggItems> Loggs { get; set; }
-
-        
-        
-        
+        public virtual IEnumerable<LoggItems> Loggs { get; set; }
     }
 }

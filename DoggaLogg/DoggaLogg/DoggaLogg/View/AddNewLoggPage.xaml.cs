@@ -10,26 +10,25 @@ using DoggaLogg.Model;
 
 namespace DoggaLogg.View
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class AddNewLoggPage : ContentPage
-	{
-		public AddNewLoggPage ()
-		{
-			InitializeComponent ();
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class AddNewLoggPage : ContentPage
+    {
+        public AddNewLoggPage()
+        {
+            InitializeComponent();
 
-            
-		}
+
+        }
 
         async void Save_Clicked(object sender, EventArgs e)
         {
-            
-            
-            var loggItem = new LoggItems() {
-                LoggTitle = TitleEntry.Text,
-                LoggText = TextEditor.Text,
-                LoggCreated = DateTime.Now
-                
-            };
+            //I load the binding context
+            var loggItem = (LoggItems)BindingContext;
+            // Set the items properties
+            loggItem.LoggTitle = TitleEntry.Text;
+            loggItem.LoggText = TextEditor.Text;
+            loggItem.LoggCreated = DateTime.Now;
+            //Save to the database
             await App.Database.SaveLoggAsync(loggItem);
             await Navigation.PopAsync();
         }

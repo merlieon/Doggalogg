@@ -12,7 +12,6 @@ namespace DoggaLogg.Model
     public class LoggItems
     {
         [PrimaryKey, AutoIncrement]
-
         public int Id { get; set; }
         public string LoggTitle { get; set; }
         public string LoggText { get; set; }
@@ -22,8 +21,8 @@ namespace DoggaLogg.Model
         public DateTime LoggTimesetStart { get; set; }
         public DateTime LoggTimesetEnd { get; set; }
 
+        //I Leave this property just like you have it before
         [ForeignKey(typeof(ProfileItems))]
-        [InverseProperty("Loggs")]
         public int ProfileId { get; set; }
     }
 }

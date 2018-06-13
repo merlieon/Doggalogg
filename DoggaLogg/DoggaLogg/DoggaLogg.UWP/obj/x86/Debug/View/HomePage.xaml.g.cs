@@ -13,7 +13,8 @@
 namespace DoggaLogg.View {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("C:\\Users\\mawil3\\source\\repos\\DoggaLogg\\DoggaLogg\\DoggaLogg\\View\\HomePage.xaml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("C:\\Users\\IVAN0\\source\\repos\\Doggalogg\\DoggaLogg\\DoggaLogg\\DoggaLogg\\View\\HomePage" +
+        ".xaml")]
     public partial class HomePage : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]

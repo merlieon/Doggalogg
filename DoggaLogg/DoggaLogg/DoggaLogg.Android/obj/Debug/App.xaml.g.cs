@@ -13,7 +13,7 @@
 namespace DoggaLogg {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("C:\\Users\\mawil3\\source\\repos\\DoggaLogg\\DoggaLogg\\DoggaLogg\\App.xaml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("C:\\Users\\IVAN0\\source\\repos\\Doggalogg\\DoggaLogg\\DoggaLogg\\DoggaLogg\\App.xaml")]
     public partial class App : global::Xamarin.Forms.Application {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
